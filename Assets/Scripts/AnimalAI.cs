@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum ObstaclePosition {
+    Left,
+    Right,
+    None
+}
+
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(Rigidbody))]
 public class AnimalAI : MonoBehaviour {

@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour, IAliveEntity {
     [Header ("Movement Configurations")]
     [SerializeField] float maxSpeed = 2f;
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float torque = 4f;
-
-
-    [Header ("Ground Detection")]
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundMask;
-    [SerializeField] float groundDistance = 0.2f;
+    [SerializeField] Animator animator;
+    [SerializeField] private Animator deathMenuAnimator;
 
     public bool IsGrounded { get; private set; }
 
@@ -21,18 +16,17 @@ public class PlayerController : MonoBehaviour
     private float verticalMovement;
     private readonly float movementMultiplier = 10f;
     private Rigidbody rb;
+    private GameObject bloodParticle;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody> ();
-//        rb.freezeRotation = true;
+        bloodParticle = Resources.Load ("bloodParticles") as GameObject;
     }
 
     void Update()
     {
-        IsGrounded = Physics.CheckSphere (groundCheck.position, groundDistance, groundMask);
-
         MyInput ();
     }
     private void FixedUpdate () {
@@ -44,6 +38,9 @@ public class PlayerController : MonoBehaviour
     void MyInput () {
         horizontalMovement = Input.GetAxisRaw ("Horizontal");
         verticalMovement = Input.GetAxisRaw ("Vertical");
+        if (verticalMovement < 0) {
+            verticalMovement = 0;
+        }
 
     }
 
@@ -53,8 +50,15 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.magnitude > maxSpeed) {
             rb.velocity = Vector3.ClampMagnitude (rb.velocity, maxSpeed);
         }
-
+        animator.SetFloat ("speed", verticalMovement, 0.2f, Time.deltaTime);
         //Rotation
         rb.AddTorque (0, horizontalMovement * torque, 0, ForceMode.VelocityChange); 
+    }
+
+
+    public void Die () {
+        deathMenuAnimator.SetTrigger ("show");
+        Instantiate (bloodParticle, transform.position, Quaternion.identity);
+        Destroy (gameObject);
     }
 }

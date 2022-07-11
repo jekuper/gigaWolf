@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum ObstaclePosition {
+    Left,
+    Right,
+    None
+}
+
 public class AIobstaclesModule : MonoBehaviour, IaiModule {
     [SerializeField] private AnimalAISystem sys;
 

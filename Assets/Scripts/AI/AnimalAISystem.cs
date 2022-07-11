@@ -6,6 +6,10 @@ using UnityEngine;
 public interface IaiModule {
     void MainHandler ();
 }
+public interface IAliveEntity {
+    void Die ();
+}
+
 
 public class AnimalAISystem : MonoBehaviour, IAliveEntity
 {

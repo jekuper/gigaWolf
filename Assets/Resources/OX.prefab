@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sys: {fileID: 3038769933558603923}
+  isStunned: 0
 --- !u!114 &3038769933637170642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3038769934144682140}
   m_LocalRotation: {x: -0.00000005960465, y: 0.13052616, z: -0.000000014901163, w: 0.9914449}
-  m_LocalPosition: {x: 0.24340001, y: 0.39900005, z: 0.51279986}
+  m_LocalPosition: {x: 0.24340001, y: 0.16, z: 0.51279986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 3038769934239691177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3038769934239395215}
@@ -420,6 +421,7 @@ MonoBehaviour:
   maxSpeed: 1
   movementMultiplier: 20
   rotationSpeed: 120
+  isRoarEffected: 0
 --- !u!1 &3038769934239691179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3038769935174641601}
   m_LocalRotation: {x: -0.000000029802322, y: -0.13052624, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: -0.26200002, y: 0.39900005, z: 0.51279986}
+  m_LocalPosition: {x: -0.26200002, y: 0.16, z: 0.51279986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

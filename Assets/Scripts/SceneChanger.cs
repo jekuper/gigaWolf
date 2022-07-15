@@ -11,4 +11,9 @@ public class SceneChanger : MonoBehaviour
     public void ExitGame () {
         Application.Quit ();
     }
+    private void Update () {
+        if (Input.GetKeyDown (KeyCode.X)) {
+            GotToScene ("menu");
+        }
+    }
 }

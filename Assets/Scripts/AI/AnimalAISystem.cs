@@ -33,6 +33,23 @@ public class AnimalAISystem : MonoBehaviour, IAliveEntity
 
     public bool isRoarEffected = false;
 
+    public void TurnOff () {
+        if (fearModule != null)
+            fearModule.enabled = false;
+
+        if (attackModule != null)
+            attackModule.enabled = false;
+
+        if (followModule != null)
+            followModule.enabled = false;
+
+        if (movementModule != null)
+            movementModule.enabled = false;
+
+        if (obstacleModule != null)
+            obstacleModule.enabled = false;
+        enabled = false;
+    }
     public void Die () {
         Instantiate (Resources.Load ("bloodParticles") as GameObject, transform.position, Quaternion.identity);
         Destroy (mainTransform.gameObject);

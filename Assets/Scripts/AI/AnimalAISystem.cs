@@ -33,6 +33,12 @@ public class AnimalAISystem : MonoBehaviour, IAliveEntity
 
     public bool isRoarEffected = false;
 
+    private float maxSpeedDublicate;
+
+    private void Start () {
+        maxSpeedDublicate = maxSpeed;
+    }
+
     public void TurnOff () {
         if (fearModule != null)
             fearModule.enabled = false;
@@ -85,12 +91,22 @@ public class AnimalAISystem : MonoBehaviour, IAliveEntity
         }
         StartCoroutine (Stun (time));
     }
+    public void ImpulseEffect (float time, Quaternion rotation) {
+        StartCoroutine (Impulse (time, rotation));
+    }
+    private IEnumerator Impulse (float time, Quaternion rotation) {
+        movementModule.Move (time, rotation);
+
+        maxSpeed = 4;
+        mainAnimator.SetTrigger ("rollEnter");
+        yield return new WaitForSeconds (time);
+        mainAnimator.SetTrigger ("rollExit");
+        maxSpeed = maxSpeedDublicate;
+    }
+
     private IEnumerator Stun (float time) {
         movementModule.isStunned = true;
-        while (time > 0) {
-            time -= Time.deltaTime;
-            yield return new WaitForEndOfFrame ();
-        }
+        yield return new WaitForSeconds (time);
         movementModule.isStunned = false;
     }
 }

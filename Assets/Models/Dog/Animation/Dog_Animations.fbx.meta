@@ -128,7 +128,7 @@ ModelImporter:
     second: Wolf_LOD1
   - first:
       74: 7400000
-    second: Wolf Bounce
+    second: Dog Bounce
   - first:
       74: 7400002
     second: Clicked
@@ -161,7 +161,7 @@ ModelImporter:
     second: Idle_B
   - first:
       74: 7400022
-    second: Wolf Idle_C
+    second: Dog Idle_C
   - first:
       95: 9500000
     second: //RootNode
@@ -204,6 +204,30 @@ ModelImporter:
   - first:
       74: -6321903568410610213
     second: Wolf Idle_B
+  - first:
+      74: -6706578282242015169
+    second: Dog Clicked
+  - first:
+      74: 1380517749846741412
+    second: Dog Munch
+  - first:
+      74: 849155695149475131
+    second: Dog Roll
+  - first:
+      74: -182560923120711021
+    second: Dog Run
+  - first:
+      74: -6074875658237589848
+    second: Dog Spin
+  - first:
+      74: -9133563225794108889
+    second: Dog Swim
+  - first:
+      74: -4986310478645638641
+    second: Dog Idle_A
+  - first:
+      74: 5111016960204363500
+    second: Dog Idle_B
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -239,7 +263,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wolf Bounce
+      name: Dog Bounce
       takeName: Rig|Bounce
       internalID: 0
       firstFrame: 0
@@ -294,7 +318,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Clicked
+      name: Dog Clicked
       takeName: Rig|Clicked
       internalID: 0
       firstFrame: 0
@@ -349,7 +373,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Munch
+      name: Dog Munch
       takeName: Rig|Munch
       internalID: 0
       firstFrame: 0
@@ -404,7 +428,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Roll
+      name: Dog Roll
       takeName: Rig|Roll
       internalID: 0
       firstFrame: 0
@@ -459,7 +483,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Run
+      name: Dog Run
       takeName: Rig|Run
       internalID: 0
       firstFrame: 0
@@ -514,7 +538,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Spin
+      name: Dog Spin
       takeName: Rig|Spin
       internalID: 0
       firstFrame: 0
@@ -569,7 +593,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Swim
+      name: Dog Swim
       takeName: Rig|Swim
       internalID: 0
       firstFrame: 0
@@ -679,7 +703,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Idle_A
+      name: Dog Idle_A
       takeName: Rig|Idle
       internalID: 0
       firstFrame: 0
@@ -734,7 +758,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Idle_B
+      name: Dog Idle_B
       takeName: Rig|Idle
       internalID: 0
       firstFrame: 11
@@ -789,7 +813,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf Idle_C
+      name: Dog Idle_C
       takeName: Rig|Idle
       internalID: 0
       firstFrame: 22

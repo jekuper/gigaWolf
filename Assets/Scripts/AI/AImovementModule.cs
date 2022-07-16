@@ -36,6 +36,7 @@ public enum rotationSource {
     Follow,
     Fear,
     Obstacles,
+    OuterCommand,
 }
 
 public class AImovementModule : MonoBehaviour, IaiModule {
@@ -64,6 +65,20 @@ public class AImovementModule : MonoBehaviour, IaiModule {
         HandleCommands ();
     }
 
+    public void MoveForward (float timer) {
+        StartCoroutine (MoveCoroutine (timer, sys.mainTransform.rotation));
+    }
+    public void Move (float timer, Quaternion rotation) {
+        StartCoroutine (MoveCoroutine (timer, rotation));
+    }
+    private IEnumerator MoveCoroutine (float timer, Quaternion rot) {
+        while(timer > Time.fixedDeltaTime) {
+            timer -= Time.fixedDeltaTime;
+            sys.SendRotation (rot, rotationSource.OuterCommand);
+            yield return new WaitForFixedUpdate ();
+        }
+    }
+
     private void HandleBaseBehavior () {
         if (config.time < 0) {
             config.Generate (2, sys.mainTransform.eulerAngles.y);
@@ -80,13 +95,6 @@ public class AImovementModule : MonoBehaviour, IaiModule {
 
         forceCommands.Sort ((x, y) => x.forceSource.CompareTo (y.forceSource));
         forceCommands.Reverse ();
-
-   /*     Debug.Log ("--start--");
-        foreach (var item in forceCommands) {
-            Debug.Log (item.forceSource);
-        }
-        Debug.Log ("--end--");
-   */
 
         if (!isStunned) {
             if (rotCommands.Count != 0) {
@@ -109,4 +117,5 @@ public class AImovementModule : MonoBehaviour, IaiModule {
 
         sys.mainAnimator.SetFloat ("speed", sys.mainRb.velocity.magnitude / sys.maxSpeed, 0.2f, Time.deltaTime);
     }
+
 }

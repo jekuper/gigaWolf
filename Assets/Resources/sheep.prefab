@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 5774280499498792101}
   - component: {fileID: 5774280499498792100}
   - component: {fileID: 5774280499498792103}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: fov
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ MonoBehaviour:
     m_Bits: 136
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 320
   maxSpeed: 2
   movementMultiplier: 10
   rotationSpeed: 180

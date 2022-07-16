@@ -10,6 +10,7 @@ public class EatMechanic : MonoBehaviour {
     [SerializeField] private GameObject UIHolder;
     [SerializeField] private RectTransform uiIndicator;
     [SerializeField] private Animator uiIndicatorAnimator;
+    [SerializeField] private PlayerController player;
 
     private float maxIndicatorHeight;
 
@@ -23,6 +24,8 @@ public class EatMechanic : MonoBehaviour {
         if (coughtSheeps == maxSheepCount) {
             coughtSheeps++;
             winMenuAnimator.SetTrigger ("show");
+            player.enabled = false;
+            animator.SetFloat ("speed", 0);
             UIHolder.SetActive (false);
         }
     }

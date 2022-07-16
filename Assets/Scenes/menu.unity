@@ -2533,7 +2533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &540693353
 Camera:
   m_ObjectHideFlags: 0
@@ -3142,11 +3142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2013869966}
-  glowColor: {r: 1, g: 0, b: 0.32911396, a: 0.5019608}
-  glowOffset: 0.16
+  glowColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  glowOffset: 0
   glowInner: 0
-  glowOuter: 0.16
-  glowPower: 1
+  glowOuter: 0.34
+  glowPower: 0.69
 --- !u!4 &652347229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8944233961459283585, guid: cbb55f40e5765c14bbd4706f06811a2a, type: 3}
@@ -8130,11 +8130,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 313631231}
-  glowColor: {r: 0, g: 0.84313726, b: 1, a: 0.5019608}
-  glowOffset: 0.16
+  glowColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  glowOffset: 0
   glowInner: 0
-  glowOuter: 0.16
-  glowPower: 1
+  glowOuter: 0.34
+  glowPower: 0.69
 --- !u!1 &1922907905
 GameObject:
   m_ObjectHideFlags: 0
@@ -8445,11 +8445,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1613651835}
-  glowColor: {r: 0, g: 0.84313726, b: 1, a: 0.5019608}
-  glowOffset: 0.16
+  glowColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  glowOffset: 0
   glowInner: 0
-  glowOuter: 0.16
-  glowPower: 1
+  glowOuter: 0.34
+  glowPower: 0.69
 --- !u!1001 &1942105403
 PrefabInstance:
   m_ObjectHideFlags: 0

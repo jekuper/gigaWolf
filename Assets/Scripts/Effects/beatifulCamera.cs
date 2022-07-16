@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
-public class beatifulCamera : MonoBehaviour
+public class BeatifulCamera : MonoBehaviour
 {
-    [SerializeField] private beatifulCamera nextCam;
+    [SerializeField] private BeatifulCamera nextCam;
     [SerializeField] private RenderTexture targetTexture;
     [SerializeField] private Animator anim;
     [SerializeField] private float timer = -1;
 
     public void Initiate () {
-        nextCam.gameObject.SetActive (true);
         GetComponent<Camera> ().targetTexture = targetTexture;
         anim.SetTrigger ("show");
         timer = Random.Range (6, 10);
@@ -28,6 +27,7 @@ public class beatifulCamera : MonoBehaviour
         }
     }
     private IEnumerator Animate () {
+        nextCam.gameObject.SetActive (true);
         anim.SetTrigger ("hide");
         yield return new WaitForSeconds (2);
         GetComponent<Camera> ().targetTexture = null;

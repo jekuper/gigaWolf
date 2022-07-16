@@ -39,7 +39,6 @@ namespace MainMenu {
         }
 
         public void OnPointerEnter (PointerEventData eventData) {
-            Debug.Log ("enxter");
             text.fontSharedMaterial = m_TextHighlightMaterial;
             text.UpdateMeshPadding ();
         }

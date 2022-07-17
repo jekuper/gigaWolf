@@ -11,8 +11,7 @@ public interface IAliveEntity {
 }
 
 
-public class AnimalAISystem : MonoBehaviour, IAliveEntity
-{
+public class AnimalAISystem : MonoBehaviour, IAliveEntity {
     public AIattackModule attackModule;
     public AIfearModule fearModule;
     public AImovementModule movementModule;

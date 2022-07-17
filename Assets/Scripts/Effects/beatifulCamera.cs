@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
-public class BeatifulCamera : MonoBehaviour
-{
+[RequireComponent (typeof (Camera))]
+public class BeatifulCamera : MonoBehaviour {
     [SerializeField] private BeatifulCamera nextCam;
     [SerializeField] private RenderTexture targetTexture;
     [SerializeField] private Animator anim;
     [SerializeField] private float timer = -1;
 
+    //initialte camera
     public void Initiate () {
         GetComponent<Camera> ().targetTexture = targetTexture;
         anim.SetTrigger ("show");
@@ -26,6 +26,8 @@ public class BeatifulCamera : MonoBehaviour
             }
         }
     }
+
+    //show next camera
     private IEnumerator Animate () {
         nextCam.gameObject.SetActive (true);
         anim.SetTrigger ("hide");

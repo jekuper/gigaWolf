@@ -10,12 +10,14 @@ public class AIfearModule : MonoBehaviour, IaiModule {
     public List<Transform> threatRefs = new List<Transform> ();
 
     public void MainHandler () {
+        //deleting threats that are far
         for (int i = 0; i < threatRefs.Count; i++) {
             if (threatRefs[i] == null || Vector3.Distance (sys.mainTransform.position, threatRefs[i].position) > calmDistance) {
                 threatRefs.RemoveAt (i);
                 i--;
             }
         }
+        //calculating and sending rotation according to threats positions
         if (threatRefs.Count != 0) {
             float targetAngle = GetAverageAngle (threatRefs);
             Quaternion targetRotation = Quaternion.Euler (0f, Mathf.MoveTowardsAngle (sys.mainTransform.eulerAngles.y, targetAngle, Time.fixedDeltaTime * sys.rotationSpeed), 0f);
@@ -24,6 +26,7 @@ public class AIfearModule : MonoBehaviour, IaiModule {
         }
     }
     private void OnTriggerEnter (Collider other) {
+        //adding threats
         if (((1 << other.gameObject.layer) & sys.threatsMask.value) != 0) {
             threatRefs.Add (other.transform);
         }

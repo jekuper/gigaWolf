@@ -20,14 +20,12 @@ public class PlayerController : MonoBehaviour, IAliveEntity {
     private GameObject bloodParticle;
 
 
-    void Start()
-    {
+    void Start () {
         rb = GetComponent<Rigidbody> ();
         bloodParticle = Resources.Load ("bloodParticles") as GameObject;
     }
 
-    void Update()
-    {
+    void Update () {
         MyInput ();
     }
     private void FixedUpdate () {

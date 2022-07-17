@@ -24,7 +24,7 @@ public class EatMechanic : MonoBehaviour {
         if (coughtSheeps == maxSheepCount) {
             coughtSheeps++;
             winMenuAnimator.SetTrigger ("show");
-            player.enabled = false;
+            Destroy (player);
             animator.SetFloat ("speed", 0);
             UIHolder.SetActive (false);
         }

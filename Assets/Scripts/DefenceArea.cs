@@ -26,7 +26,7 @@ public class DefenceArea : MonoBehaviour {
 
     private void OnTriggerEnter (Collider other) {
         if (other.gameObject.tag == "sheep") {
-            StartCoroutine (Dissapear(other.transform.parent));
+            StartCoroutine (Dissapear (other.transform.parent));
             coughtSheeps++;
             UpdateText ();
             uiIndicator.text = coughtSheeps.ToString ();
@@ -34,7 +34,7 @@ public class DefenceArea : MonoBehaviour {
     }
     private IEnumerator Dissapear (Transform target) {
         float moveTime = Random.Range (3, 5);
-        target.GetComponent<AnimalAISystem> ().movementModule.MoveForward(moveTime);
+        target.GetComponent<AnimalAISystem> ().movementModule.MoveForward (moveTime);
 
         yield return new WaitForSeconds (moveTime);
 

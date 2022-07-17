@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RoarMechanic : MonoBehaviour
-{
+public class RoarMechanic : MonoBehaviour {
     public float roarReloadTimer = 10f;
     [SerializeField] private KeyCode roarCode;
     [SerializeField] private RectTransform uiForeground;
@@ -21,7 +20,7 @@ public class RoarMechanic : MonoBehaviour
     }
 
     private void Update () {
-        
+
         if (Input.GetKeyDown (roarCode)) {
             Roar ();
         }

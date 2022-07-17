@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImpulseMechanic : MonoBehaviour
-{
+public class ImpulseMechanic : MonoBehaviour {
     public float impulseDuration = 1f;
     [SerializeField] private Transform mainTransform;
     [SerializeField] private Animator playerAnimator;

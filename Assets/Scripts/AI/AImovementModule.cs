@@ -71,6 +71,7 @@ public class AImovementModule : MonoBehaviour, IaiModule {
     public void Move (float timer, Quaternion rotation) {
         StartCoroutine (MoveCoroutine (timer, rotation));
     }
+    //responsible for outer move&rotate commands
     private IEnumerator MoveCoroutine (float timer, Quaternion rot) {
         while(timer > Time.fixedDeltaTime) {
             timer -= Time.fixedDeltaTime;
@@ -89,6 +90,8 @@ public class AImovementModule : MonoBehaviour, IaiModule {
 
         sys.SendRotation (targetRotation, rotationSource.BaseBehavior);
     }
+
+    //calculating and applying commands with highest priority every fixed update
     private void HandleCommands () {
         rotCommands.Sort ((x, y) => x.rotSource.CompareTo (y.rotSource));
         rotCommands.Reverse ();
@@ -108,6 +111,8 @@ public class AImovementModule : MonoBehaviour, IaiModule {
         rotCommands.Clear ();
         forceCommands.Clear ();
     }
+
+    //adding base forward force
     private void HandleMovement () {
         sys.SendForce (sys.mainTransform.forward * sys.maxSpeed * sys.movementMultiplier, ForceMode.Force, forceSource.BaseBehavior);
 

@@ -4,6 +4,10 @@
 
 Welcome to the Giga Wolf game source code repository. Giga Wolf is a unique game prototype featuring automatic AI systems built on a modified Entity Component System (ECS) programming pattern.
 
+<a href="https://youtu.be/TfpUXl0zlyI">
+  <img align="right" width="40%" src="https://github.com/jekuper/gigaWolf/blob/master/readme_supplimental/video.png?raw=true" alt="youtube preview">
+</a>
+
 ## Gameplay
 
 Giga Wolf offers two exciting game modes:

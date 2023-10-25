@@ -54,9 +54,9 @@ public class AImovementModule : MonoBehaviour, IaiModule {
     }
 
 
-    public List<RotationCommand> rotCommands = new List<RotationCommand>();
+    public List<RotationCommand> rotCommands = new List<RotationCommand> ();
     public List<ForceCommand> forceCommands = new List<ForceCommand> ();
-    public BaseBehaviorConfig config = new BaseBehaviorConfig();
+    public BaseBehaviorConfig config = new BaseBehaviorConfig ();
     public bool isStunned = false;
 
     public void MainHandler () {
@@ -73,7 +73,7 @@ public class AImovementModule : MonoBehaviour, IaiModule {
     }
     //responsible for outer move&rotate commands
     private IEnumerator MoveCoroutine (float timer, Quaternion rot) {
-        while(timer > Time.fixedDeltaTime) {
+        while (timer > Time.fixedDeltaTime) {
             timer -= Time.fixedDeltaTime;
             sys.SendRotation (rot, rotationSource.OuterCommand);
             yield return new WaitForFixedUpdate ();
